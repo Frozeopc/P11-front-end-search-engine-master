@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Les petis plats</title>
+</head>
+
+<body>
+    <div class="container my-4">
+        <div class="row mb-3">
+            <header class="col text-center">
+                <img src="assets/logo.png" alt="Logo - Les petits plats" class="logo img-fluid">
+            </header>
+        </div>
+        <div class="container__searchbar">
+
+            <div class="input-group mb-3 ">
+                <input type="search" name="searchbar" id="searchbar" class="form-control bg-light border-0"
+                    placeholder="Rechercher une recette" aria-label="Rechercher une recette">
+                <span class="input-group-text border-0 bg-light" id="basic-addon2">
+                    <img src="assets/loupe.png" alt="Icone loupe" class="search-icon  search-icon">
+                </span>
+            </div>
+
+        </div>
+        <div class="tagged container__filter">
+            <!-- TAG FILTRE -->
+        </div>
+        <div class="row container__filter">
+            <div class=" col-4 component-filter">
+                <div class="filterClosed input-group">
+                    <input type="text" name="ingredientSearchbar" id="ingredientSearchbar" placeholder="Ingrédients"
+                        class=" form-control searchbarTags bg-primary p-4">
+                    <button type="button" class="btn bg-primary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end bg-primary ">
+                        <!-- <li><a class="dropdown-item text-white" href="#">Action</a></li> -->
+
+                    </ul>
+                    <!-- <div>
+                        <i class="fas fa-chevron-up pointer" id="arrowUpIngredients"></i>
+                        <i class="fas fa-chevron-down hidden pointer" id="arrowDownIngredients"></i>
+                    </div> -->
+                </div>
+                <aside class="hidden" id="asideIngredients">
+                    <ul class="ingredientResults">
+
+                    </ul>
+                </aside>
+            </div>
+
+            <div class="col-4 bg-success component-filter">
+                <div class="filterClosed">
+                    <input type="text" name="applianceSearchbar" id="applianceSearchbar" placeholder="Appareils"
+                        class="searchbarTags">
+                    <div>
+                        <i class="fas fa-chevron-up pointer" id="arrowUpAppliances"></i>
+                        <i class="fas fa-chevron-down hidden pointer" id="arrowDownAppliances"></i>
+                    </div>
+                </div>
+                <aside class="hidden" id="asideAppliances">
+                    <ul class="appliancesResults">
+
+                    </ul>
+                </aside>
+            </div>
+
+            <div class="col-4 bg-danger component-filter">
+                <div class="filterClosed">
+                    <input type="text" name="ustensilSearchbar" id="ustensilSearchbar" placeholder="Ustensils"
+                        class="searchbarTags">
+                    <div>
+                        <i class="fas fa-chevron-up pointer" id="arrowUpUstensils"></i>
+                        <i class="fas fa-chevron-down hidden pointer" id="arrowDownUstensils"></i>
+                    </div>
+                </div>
+                <aside class="hidden" id="asideUstensils">
+                    <ul class="ustensilsResults">
+
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <main class="container container__recipes">
+
+    </main>
+    <div class="hidden errorMsg container">
+        <div>
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div>
+            <span>
+                Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson
+                », etc..
+            </span>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script type='module' src="index.js"></script>
+    <script src="utils/search.js"></script>
+    <script src="utils/ingredient.js"></script>
+    <script src="utils/appliance.js"></script>
+    <script src="utils/ustensils.js"></script>
+    <script src="utils/autocompletion.js"></script>
+</body>
+
+
+</html>
