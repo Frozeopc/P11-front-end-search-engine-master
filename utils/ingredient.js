@@ -13,4 +13,3 @@ function filterIngredients(arr) {
     })
     return ingredients
 };
-

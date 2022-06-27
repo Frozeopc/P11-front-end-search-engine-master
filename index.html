@@ -34,15 +34,16 @@
             <!-- TAG FILTRE -->
         </div>
         <div class="row container__filter">
-            <div class=" col-4 component-filter">
-                <div class="filterClosed input-group">
+            <div class=" col-4">
+                <div class="input-group">
                     <input type="text" name="ingredientSearchbar" id="ingredientSearchbar" placeholder="Ingrédients"
                         class=" form-control searchbarTags bg-primary p-4">
-                    <button type="button" class="btn bg-primary dropdown-toggle dropdown-toggle-split"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <button type="button" id="dropdownIngredientButton"
+                        class="btn bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         <span class="visually-hidden">Toggle Dropdown</span>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end bg-primary ">
+                    <ul id="dropdown-ingredient" class="dropdown-menu dropdown-menu-end bg-primary ">
                         <!-- <li><a class="dropdown-item text-white" href="#">Action</a></li> -->
 
                     </ul>
@@ -51,11 +52,7 @@
                         <i class="fas fa-chevron-down hidden pointer" id="arrowDownIngredients"></i>
                     </div> -->
                 </div>
-                <aside class="hidden" id="asideIngredients">
-                    <ul class="ingredientResults">
 
-                    </ul>
-                </aside>
             </div>
 
             <div class="col-4 bg-success component-filter">

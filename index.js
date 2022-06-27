@@ -8,7 +8,10 @@ const inputSearchbar = document.querySelector('#searchbar');
 const inputSearchAppliance = document.querySelector('#applianceSearchbar');
 const inputSearchUstensil = document.querySelector('#ustensilSearchbar');
 const inputSearchIngredient = document.querySelector('#ingredientSearchbar');
+const dropdownIngredient = document.querySelector('#dropdown-ingredient');
+const dropdownIngredientButton = document.querySelector('#dropdownIngredientButton');
 var arrResults = new Array();
+
 
 inputSearchbar.addEventListener('keyup', function (event) {
     if (inputSearchbar.value.length < 3) return;
@@ -17,12 +20,13 @@ inputSearchbar.addEventListener('keyup', function (event) {
     displayRecipes(arrResults);
 })
 
+dropdownIngredientButton.addEventListener('click', function (event) {
+    displayIngredientsDropdown(this.value);
+})
+
 //recherche par ingrédient //enlever arringredients de addeventlistener
 inputSearchIngredient.addEventListener('keyup', function (event) {
-    const arrIngredients = filterIngredients(recipes);
-    //la fonction retourne un string HTML pour l'afficher en dessus de l'input recherche ingrédient
-    searchAutocompletion(arrIngredients, this.value);
-
+    displayIngredientsDropdown(this.value);
 })
 
 //recherche par appareil // 
@@ -42,6 +46,13 @@ inputSearchUstensil.addEventListener('keyup', function (event) {
     searchAutocompletion(arrUstensils, this.value);
 
 })
+
+function displayIngredientsDropdown(value) {
+    const arrIngredients = filterIngredients(recipes);
+
+    dropdownIngredient.innerHTML = searchAutocompletion(arrIngredients, value);
+    dropdownIngredient.classList.add("show");
+}
 
 // appel de la fonction affichage de toutes les recettes
 function displayRecipes(recipes) {

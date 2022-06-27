@@ -11,5 +11,9 @@ function searchAutocompletion(arrData, search) {
 
     // création html en fonction du résultat (à mettre dans le return)
     console.log(resultSearch);
-    return resultSearch;
+    var html = ''
+    resultSearch.forEach(result => {
+        html += `<li><a class="dropdown-item text-white" href="#">${result}</a></li>`
+    });
+    return html;
 }
