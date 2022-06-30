@@ -1,7 +1,0 @@
-const inputByIngredient = document.getElementById("search_input_by_ingredient")
-const showTags = document.getElementById("show_tag")
-const searchInput = document.getElementById("search_input")
-const tagContainers = document.querySelectorAll(".tag_container")
-const errorText = document.getElementById("error")
-const recipeContainer = document.getElementById("recipe_wrapper")
-const resultSearch = document.getElementById("result_search")

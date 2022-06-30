@@ -1,57 +1,92 @@
 // JS de la page d'accueil
 
-import { recipes } from "./data/data.js";
-import { recipeFactory } from "./models/recipe.js";
+// import { recipes } from "./data/data.js";
+// import { recipeFactory } from "./models/recipe.js";
 
 
-const inputSearchbar = document.querySelector('#searchbar');
+// const inputSearchbar = document.querySelector('#searchbar');
 const inputSearchAppliance = document.querySelector('#applianceSearchbar');
 const inputSearchUstensil = document.querySelector('#ustensilSearchbar');
 const inputSearchIngredient = document.querySelector('#ingredientSearchbar');
 const dropdownIngredient = document.querySelector('#dropdown-ingredient');
+const dropdownAppliance = document.querySelector('#dropdown-appliance');
+const dropdownUstensil = document.querySelector('#dropdown-ustensil');
 const dropdownIngredientButton = document.querySelector('#dropdownIngredientButton');
-var arrResults = new Array();
+const dropdownListIngredient = new bootstrap.Dropdown(dropdownIngredientButton);
+const dropdownApplianceButton = document.querySelector('#dropdownApplianceButton');
+const dropdownListAppliance = new bootstrap.Dropdown(dropdownApplianceButton);
+const dropdownUstensilButton = document.querySelector('#dropdownUstensilButton');
+const dropdownListUstensil = new bootstrap.Dropdown(dropdownUstensilButton);
 
 
-inputSearchbar.addEventListener('keyup', function (event) {
-    if (inputSearchbar.value.length < 3) return;
-    arrResults = search(recipes, inputSearchbar.value)
-    console.log(arrResults);
-    displayRecipes(arrResults);
-})
 
+// inputSearchbar.addEventListener('keyup', function (event) {
+//     if (inputSearchbar.value.length < 3 && inputSearchbar.value.length > 0) return;
+//     if (inputSearchbar.value.length === 0) displayRecipes(recipes);
+//     arrResults = search(recipes, inputSearchbar.value)
+//     console.log(arrResults);
+//     displayRecipes(arrResults);
+// })
+
+
+//recherche par ingrédient 
 dropdownIngredientButton.addEventListener('click', function (event) {
-    displayIngredientsDropdown(this.value);
+    displayIngredientsDropdown(inputSearchIngredient.value);
+
 })
 
-//recherche par ingrédient //enlever arringredients de addeventlistener
+
 inputSearchIngredient.addEventListener('keyup', function (event) {
     displayIngredientsDropdown(this.value);
+    dropdownListIngredient.show();
+    inputSearchIngredient.focus();
+
+})
+//recherche par appareil 
+dropdownApplianceButton.addEventListener('click', function (event) {
+    displayApplianceDropdown(inputSearchAppliance.value);
+
 })
 
-//recherche par appareil // 
-inputSearchAppliance.addEventListener('keyup', function (event) {
-    const arrAppliance = filterAppliance(recipes);
 
-    //la fonction retourne un string HTML pour l'afficher en dessus de l'input recherche ingrédient
-    searchAutocompletion(arrAppliance, this.value);
+inputSearchAppliance.addEventListener('keyup', function (event) {
+    displayApplianceDropdown(this.value)
+    dropdownListAppliance.show();
+    inputSearchAppliance.focus();
+})
+
+dropdownUstensilButton.addEventListener('click', function (event) {
+    displayUstensilsDropdown(inputSearchUstensil.value);
 
 })
 
 // recherche par ustensil
 inputSearchUstensil.addEventListener('keyup', function (event) {
-    const arrUstensils = filterUstensils(recipes);
-
-    //la fonction retourne un string HTML pour l'afficher en dessus de l'input recherche ingrédient
-    searchAutocompletion(arrUstensils, this.value);
+    displayUstensilsDropdown(this.value)
+    dropdownListUstensil.show();
+    inputSearchUstensil.focus();
 
 })
 
 function displayIngredientsDropdown(value) {
     const arrIngredients = filterIngredients(recipes);
+    //rajout addeventlistener
+    dropdownIngredient.innerHTML = searchAutocompletion(arrIngredients, value, "ingredient");
 
-    dropdownIngredient.innerHTML = searchAutocompletion(arrIngredients, value);
-    dropdownIngredient.classList.add("show");
+}
+
+function displayApplianceDropdown(value) {
+    const arrAppliance = filterAppliance(recipes);
+
+    dropdownAppliance.innerHTML = searchAutocompletion(arrAppliance, value, "appliance");
+
+}
+
+function displayUstensilsDropdown(value) {
+    const arrUstensils = filterUstensils(recipes);
+
+    dropdownUstensil.innerHTML = searchAutocompletion(arrUstensils, value, "ustensil");
+
 }
 
 // appel de la fonction affichage de toutes les recettes
