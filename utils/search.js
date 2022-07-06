@@ -9,7 +9,7 @@ inputSearchbar.addEventListener('keyup', function (event) {
 
 function search(valueSearch) {
     arrResults = recipes
-
+    //BRANCH 2
     if (valueSearch !== null && valueSearch.length > 2) {
 
         var strSearch = valueSearch.toLowerCase();
