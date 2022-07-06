@@ -20,13 +20,7 @@ const dropdownListUstensil = new bootstrap.Dropdown(dropdownUstensilButton);
 
 
 
-// inputSearchbar.addEventListener('keyup', function (event) {
-//     if (inputSearchbar.value.length < 3 && inputSearchbar.value.length > 0) return;
-//     if (inputSearchbar.value.length === 0) displayRecipes(recipes);
-//     arrResults = search(recipes, inputSearchbar.value)
-//     console.log(arrResults);
-//     displayRecipes(arrResults);
-// })
+
 
 
 //recherche par ingrédient 
@@ -90,16 +84,16 @@ function displayUstensilsDropdown(value) {
 }
 
 // appel de la fonction affichage de toutes les recettes
-function displayRecipes(recipes) {
-    const recipesSection = document.querySelector(".container__recipes");
-    let contentHTML = "";
-    recipes.forEach(recipe => {
-        let recipeModel = recipeFactory(recipe);
-        let recipeCardDom = recipeModel.getRecipeCardDom();
-        contentHTML += recipeCardDom;
-    });
-    recipesSection.innerHTML = contentHTML;
-}
+// function displayRecipes(recipes) {
+//     const recipesSection = document.querySelector(".container__recipes");
+//     let contentHTML = "";
+//     recipes.forEach(recipe => {
+//         let recipeModel = recipeFactory(recipe);
+//         let recipeCardDom = recipeModel.getRecipeCardDom();
+//         contentHTML += recipeCardDom;
+//     });
+//     recipesSection.innerHTML = contentHTML;
+// }
 
 async function init() {
 
