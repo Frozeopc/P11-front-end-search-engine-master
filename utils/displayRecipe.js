@@ -1,3 +1,4 @@
+// fonction création et intégration html des recettes
 function displayRecipes(recipes) {
     const recipesSection = document.querySelector(".container__recipes");
     let contentHTML = "";
@@ -9,7 +10,7 @@ function displayRecipes(recipes) {
             contentHTML += recipeCardDom;
         });
     } else {
-        contentHTML = `<h5>Aucun résultat ne correspond à votre recherche</h5>`
+        contentHTML = `<h5>Aucun résultat ne correspond à votre recherche</h5>`;
     }
 
     recipesSection.innerHTML = contentHTML;

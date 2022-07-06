@@ -1,16 +1,16 @@
 // model recette (objet recette)
-// fonction affichage d'une recette (html)
 
 function recipeFactory(data) {
     const { id, name, servings, ingredients, time, description, appliance, ustensils } = data;
 
+    // fonction affichage d'une recette (html)
     function getRecipeCardDom() {
         let htmlIngredients = '';
         ingredients.forEach(ingredient => {
             htmlIngredients += `<p class="card-text mb-0 "><span class="fw-bold">${ingredient.ingredient} </span>
             ${(ingredient.quantity) ? ": " + ingredient.quantity : ""}
             ${(ingredient.unit) ? ingredient.unit : ""}
-            </p> `
+            </p> `;
         });
 
 
@@ -45,7 +45,7 @@ function recipeFactory(data) {
                 </div>    
             </div>
                 `;
-        return (html)
+        return (html);
     }
-    return { getRecipeCardDom }
+    return { getRecipeCardDom };
 }

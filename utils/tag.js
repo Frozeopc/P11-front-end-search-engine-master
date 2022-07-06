@@ -1,6 +1,6 @@
-
+// fonction création d'un tag (filtre séléctionné)
 function createTag(filter) {
-    const containerTagIngredient = document.getElementById('tag-ingredient')
+    const containerTagIngredient = document.getElementById('tag-ingredient');
     const containerTagAppliance = document.getElementById('tag-appliance');
     const containerTagUstensil = document.getElementById('tag-ustensil');
 
@@ -36,9 +36,10 @@ function createTag(filter) {
     search(inputSearchbar.value);
 }
 
+// fonction suppression d'un tag
 function closeTag(tag) {
     const tagElement = document.querySelector('[data-name="' + tag + '"]');
     tagElement.remove();
-    search(inputSearchbar.value)
+    search(inputSearchbar.value);
 }
 

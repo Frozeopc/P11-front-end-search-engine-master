@@ -1,15 +1,16 @@
 let arrResults = recipes;
 const inputSearchbar = document.querySelector('#searchbar');
 
+
 inputSearchbar.addEventListener('keyup', function (event) {
 
-    search(inputSearchbar.value)
+    search(inputSearchbar.value);
 
-})
+});
 
 function search(valueSearch) {
-    arrResults = recipes
-
+    arrResults = recipes;
+    // filtre des recettes en fonction de la barre de recherche (sur nom, description et ingrédients)
     if (valueSearch !== null && valueSearch.length > 2) {
 
         var strSearch = valueSearch.toLowerCase();
@@ -21,14 +22,14 @@ function search(valueSearch) {
                     .toLowerCase()
                     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
                     .includes(strSearch)
-            )
-            || recipe.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(strSearch)
-            || recipe.description.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(strSearch)
+            ) ||
+            recipe.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(strSearch) ||
+            recipe.description.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(strSearch)
 
-        )
+        );
     }
 
-
+    // filtre des recettes en fonction des tags sélectionnés
     let tagList = document.querySelectorAll('.tag');
 
     tagList.forEach(tag => {
@@ -41,22 +42,23 @@ function search(valueSearch) {
                             .toLowerCase()
                             .includes(tag.dataset.name)
                     )
-                )
+                );
                 break;
             case 'appliance':
                 arrResults = arrResults.filter((recipe) =>
                     recipe.appliance.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(tag.dataset.name)
-                )
+                );
                 break;
             case 'ustensil':
                 arrResults = arrResults.filter((recipe) =>
                     recipe.ustensils.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(tag.dataset.name)
-                )
+                );
                 break;
         }
 
-    })
+    });
 
+    // appel de la fonction pour afficher les recettes en fonction des filtres
     displayRecipes(arrResults);
 
 }

@@ -1,10 +1,4 @@
-// JS de la page d'accueil
-
-// import { recipes } from "./data/data.js";
-// import { recipeFactory } from "./models/recipe.js";
-
-
-// const inputSearchbar = document.querySelector('#searchbar');
+// récupération des éléments HTML
 const inputSearchAppliance = document.querySelector('#applianceSearchbar');
 const inputSearchUstensil = document.querySelector('#ustensilSearchbar');
 const inputSearchIngredient = document.querySelector('#ingredientSearchbar');
@@ -21,46 +15,48 @@ const dropdownListUstensil = new bootstrap.Dropdown(dropdownUstensilButton);
 
 
 
-
-
-//recherche par ingrédient 
+//recherche par ingrédient (filtre)
+// affichage de la liste des ingrédients
 dropdownIngredientButton.addEventListener('click', function (event) {
     displayIngredientsDropdown(inputSearchIngredient.value);
 
-})
-
-
+});
+//recherche d'un ingrédient
 inputSearchIngredient.addEventListener('keyup', function (event) {
     displayIngredientsDropdown(this.value);
     dropdownListIngredient.show();
     inputSearchIngredient.focus();
 
-})
-//recherche par appareil 
+});
+
+
+//recherche par appareil (filtre)
+// affichage de la liste des appareils
 dropdownApplianceButton.addEventListener('click', function (event) {
     displayApplianceDropdown(inputSearchAppliance.value);
 
-})
-
-
+});
+//recherche d'un appareil
 inputSearchAppliance.addEventListener('keyup', function (event) {
-    displayApplianceDropdown(this.value)
+    displayApplianceDropdown(this.value);
     dropdownListAppliance.show();
     inputSearchAppliance.focus();
-})
+});
 
+//recherche par appareil (filtre)
+// affichage de la liste des ustensiles
 dropdownUstensilButton.addEventListener('click', function (event) {
     displayUstensilsDropdown(inputSearchUstensil.value);
 
-})
-
-// recherche par ustensil
+});
+// recherche d'un ustensiles
 inputSearchUstensil.addEventListener('keyup', function (event) {
-    displayUstensilsDropdown(this.value)
+    displayUstensilsDropdown(this.value);
     dropdownListUstensil.show();
     inputSearchUstensil.focus();
 
-})
+});
+
 
 function displayIngredientsDropdown(value) {
     const arrIngredients = filterIngredients(recipes);
@@ -78,22 +74,10 @@ function displayApplianceDropdown(value) {
 
 function displayUstensilsDropdown(value) {
     const arrUstensils = filterUstensils(recipes);
-
     dropdownUstensil.innerHTML = searchAutocompletion(arrUstensils, value, "ustensil");
 
 }
 
-// appel de la fonction affichage de toutes les recettes
-// function displayRecipes(recipes) {
-//     const recipesSection = document.querySelector(".container__recipes");
-//     let contentHTML = "";
-//     recipes.forEach(recipe => {
-//         let recipeModel = recipeFactory(recipe);
-//         let recipeCardDom = recipeModel.getRecipeCardDom();
-//         contentHTML += recipeCardDom;
-//     });
-//     recipesSection.innerHTML = contentHTML;
-// }
 
 async function init() {
 
