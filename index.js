@@ -25,6 +25,7 @@ const dropdownListUstensil = new bootstrap.Dropdown(dropdownUstensilButton);
 
 //recherche par ingrédient 
 dropdownIngredientButton.addEventListener('click', function (event) {
+    console.log('ceci est mon tableau de recette filtré', arrResults);
     displayIngredientsDropdown(inputSearchIngredient.value);
 
 })
@@ -63,21 +64,21 @@ inputSearchUstensil.addEventListener('keyup', function (event) {
 })
 
 function displayIngredientsDropdown(value) {
-    const arrIngredients = filterIngredients(recipes);
+    const arrIngredients = filterIngredients(arrResults);
     //rajout addeventlistener
     dropdownIngredient.innerHTML = searchAutocompletion(arrIngredients, value, "ingredient");
 
 }
 
 function displayApplianceDropdown(value) {
-    const arrAppliance = filterAppliance(recipes);
+    const arrAppliance = filterAppliance(arrResults);
 
     dropdownAppliance.innerHTML = searchAutocompletion(arrAppliance, value, "appliance");
 
 }
 
 function displayUstensilsDropdown(value) {
-    const arrUstensils = filterUstensils(recipes);
+    const arrUstensils = filterUstensils(arrResults);
 
     dropdownUstensil.innerHTML = searchAutocompletion(arrUstensils, value, "ustensil");
 

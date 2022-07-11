@@ -1,4 +1,4 @@
-//let arrResults = recipes;
+let arrResults = recipes;
 const inputSearchbar = document.querySelector('#searchbar');
 
 inputSearchbar.addEventListener('keyup', function (event) {
