@@ -13,14 +13,17 @@ function createTag(filter) {
         case "ingredient":
             background = 'bg-blue';
             containerHTML = containerTagIngredient;
+            dropdownIngredient.classList.add("invisible");
             break;
         case "appliance":
             background = 'bg-green';
             containerHTML = containerTagAppliance;
+            dropdownAppliance.classList.add("invisible");
             break;
         case "ustensil":
             background = 'bg-red';
             containerHTML = containerTagUstensil;
+            dropdownUstensil.classList.add("invisible");
             break;
     }
 

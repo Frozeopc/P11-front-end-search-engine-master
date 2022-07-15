@@ -18,10 +18,10 @@ const dropdownUstensilButton = document.querySelector('#dropdownUstensilButton')
 dropdownIngredientButton.addEventListener('click', function (event) {
     if (dropdownIngredient.classList.contains('invisible')) {
         dropdownIngredient.classList.remove('invisible');
-        inputSearchIngredient.setAttribute('style', 'width:600px')
+        inputSearchIngredient.setAttribute('style', 'width:600px');
     } else {
         dropdownIngredient.classList.add('invisible');
-        inputSearchIngredient.setAttribute('style', 'width:auto')
+        inputSearchIngredient.setAttribute('style', 'width:auto');
     }
     displayIngredientsDropdown(inputSearchIngredient.value);
 
@@ -44,10 +44,10 @@ inputSearchIngredient.addEventListener('keyup', function (event) {
 dropdownApplianceButton.addEventListener('click', function (event) {
     if (dropdownAppliance.classList.contains('invisible')) {
         dropdownAppliance.classList.remove('invisible');
-        inputSearchAppliance.setAttribute('style', 'width:600px')
+        inputSearchAppliance.setAttribute('style', 'width:600px');
     } else {
         dropdownAppliance.classList.add('invisible');
-        inputSearchAppliance.setAttribute('style', 'width:auto')
+        inputSearchAppliance.setAttribute('style', 'width:auto');
     }
     displayApplianceDropdown(inputSearchAppliance.value);
 
@@ -100,7 +100,7 @@ function displayIngredientsDropdown(value) {
         arrowDown.setAttribute('style', 'display:none;');
         arrowUp.setAttribute('style', 'display:inline;');
     }
-    const arrIngredients = filterIngredients(recipes);
+    const arrIngredients = filterIngredients(arrResults);
     //rajout addeventlistener
     dropdownIngredient.innerHTML = searchAutocompletion(arrIngredients, value, "ingredient");
 
@@ -117,7 +117,7 @@ function displayApplianceDropdown(value) {
         arrowDown.setAttribute('style', 'display:none;');
         arrowUp.setAttribute('style', 'display:inline;');
     }
-    const arrAppliance = filterAppliance(recipes);
+    const arrAppliance = filterAppliance(arrResults);
 
     dropdownAppliance.innerHTML = searchAutocompletion(arrAppliance, value, "appliance");
 
@@ -134,7 +134,7 @@ function displayUstensilsDropdown(value) {
         arrowDown.setAttribute('style', 'display:none;');
         arrowUp.setAttribute('style', 'display:inline;');
     }
-    const arrUstensils = filterUstensils(recipes);
+    const arrUstensils = filterUstensils(arrResults);
     dropdownUstensil.innerHTML = searchAutocompletion(arrUstensils, value, "ustensil");
 
 }
@@ -144,6 +144,6 @@ async function init() {
 
     displayRecipes(recipes);
 
-};
+}
 
 init();
