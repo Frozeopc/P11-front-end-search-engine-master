@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\bill-app"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "bill-app"
+	}
+}

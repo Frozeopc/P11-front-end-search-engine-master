@@ -10,7 +10,7 @@ function searchAutocompletion(arrData, search, type) {
     })
 
 
-    var html = ''
+    let html = ''
     if (resultSearch.length === 0) return `<li><p class="dropdown-item text-white">Aucun résultat</p></li>`
     resultSearch.forEach(result => {
         html += `<li><a class="dropdown-item text-white" onclick="createTag(this)" data-name="${result}" data-type="${type}">${result}</a></li>`

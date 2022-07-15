@@ -5,10 +5,10 @@ function createTag(filter) {
     const containerTagUstensil = document.getElementById('tag-ustensil');
 
 
-    var namefilter = filter.getAttribute('data-name');
+    let namefilter = filter.getAttribute('data-name');
     if (document.querySelector('[data-tag="' + namefilter + '"]')) return;
-    var background = "";
-    var containerHTML;
+    let background = "";
+    let containerHTML;
     switch (filter.getAttribute('data-type')) {
         case "ingredient":
             background = 'bg-primary';
@@ -25,7 +25,7 @@ function createTag(filter) {
     }
 
 
-    var html = `
+    let html = `
         <span class="badge ${background} fs-6 fw-semibold tag" data-type="${filter.getAttribute('data-type')}" data-name="${namefilter}">${namefilter}
             <button type="button" class="btn ptn-primary p-0 text-white close-tag" onclick="closeTag('${namefilter}')"><i
             class="fa-regular fa-circle-xmark"></i></button>

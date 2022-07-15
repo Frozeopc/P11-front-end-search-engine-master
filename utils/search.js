@@ -10,15 +10,15 @@ inputSearchbar.addEventListener('keyup', function (event) {
 function search(valueSearch) {
     arrResults = recipes
     if (valueSearch !== null && valueSearch.length > 2) {
-        var foundArray = []
-        var strSearch = valueSearch.toLowerCase();
+        let foundArray = []
+        let strSearch = valueSearch.toLowerCase();
         strSearch = strSearch.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        for (var i = 0; i < arrResults.length; i++) {
-            var recipeName = arrResults[i].name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(strSearch);
-            var recipeDescription = arrResults[i].description.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(strSearch);
-            var recipeIngredient = false;
+        for (let i = 0; i < arrResults.length; i++) {
+            let recipeName = arrResults[i].name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(strSearch);
+            let recipeDescription = arrResults[i].description.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(strSearch);
+            let recipeIngredient = false;
 
-            for (var j = 0; j < arrResults[i].ingredients.length; j++) {
+            for (let j = 0; j < arrResults[i].ingredients.length; j++) {
                 if (arrResults[i].ingredients[j].ingredient
                     .toLowerCase()
                     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -38,11 +38,11 @@ function search(valueSearch) {
     let tagList = document.querySelectorAll('.tag');
 
     tagList.forEach(tag => {
-        var foundArray = []
+        let foundArray = []
         switch (tag.dataset.type) {
             case 'ingredient':
-                for (var i = 0; i < arrResults.length; i++) {
-                    for (var j = 0; j < arrResults[i].ingredients.length; j++) {
+                for (let i = 0; i < arrResults.length; i++) {
+                    for (let j = 0; j < arrResults[i].ingredients.length; j++) {
                         if (arrResults[i].ingredients[j].ingredient
                             .toLowerCase()
                             .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -53,7 +53,7 @@ function search(valueSearch) {
                 }
                 break;
             case 'appliance':
-                for (var i = 0; i < arrResults.length; i++) {
+                for (let i = 0; i < arrResults.length; i++) {
                     if (arrResults[i].appliance.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(tag.dataset.name)) {
                         foundArray.push(arrResults[i])
                     }
@@ -61,7 +61,7 @@ function search(valueSearch) {
 
                 break;
             case 'ustensil':
-                for (var i = 0; i < arrResults.length; i++) {
+                for (let i = 0; i < arrResults.length; i++) {
                     if (arrResults[i].ustensils.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(tag.dataset.name)) {
                         foundArray.push(arrResults[i])
                     }
