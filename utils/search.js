@@ -13,7 +13,7 @@ function search(valueSearch) {
     // filtre des recettes en fonction de la barre de recherche (sur nom, description et ingrédients)
     if (valueSearch !== null && valueSearch.length > 2) {
 
-        var strSearch = valueSearch.toLowerCase();
+        let strSearch = valueSearch.toLowerCase();
         strSearch = strSearch.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
         arrResults = arrResults.filter((recipe) =>
