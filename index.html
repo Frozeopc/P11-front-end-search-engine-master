@@ -41,16 +41,16 @@
 
         </div>
         <div class="row mb-5">
-            <div class=" col-lg-3 col-12">
-                <div class="input-group mt-2">
+            <div class=" col-lg-auto col-12">
+                <div class="input-group mt-2 position-relative">
                     <input type="text" name="ingredientSearchbar" id="ingredientSearchbar" placeholder="Ingrédients"
-                        class=" form-control searchbarTags bg-primary fw-semibold p-4">
-                    <button type="button" id="dropdownIngredientButton"
-                        class="btn bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <span class="visually-hidden">Toggle Dropdown</span>
+                        class=" form-control searchbarTags bg-blue fw-semibold p-4"
+                        aria-describedby="dropdownIngredientButton">
+                    <button type="button" id="dropdownIngredientButton" class="btn bg-blue text-white dropdownTag">
+                        <i class="fa-solid fa-angle-down arrowDown"></i>
+                        <i class="fa-solid fa-angle-up arrowUp"></i>
                     </button>
-                    <ul id="dropdown-ingredient" class="dropdown-menu dropdown-menu-end bg-primary ">
+                    <ul id="dropdown-ingredient" class="dropdown-list bg-blue invisible">
 
                     </ul>
 
@@ -59,30 +59,30 @@
             </div>
 
 
-            <div class="col-lg-3 col-12">
-                <div class="input-group mt-2">
+            <div class="col-lg-auto col-12">
+                <div class="input-group mt-2 position-relative">
                     <input type="text" name="applianceSearchbar" id="applianceSearchbar" placeholder="Appareils"
-                        class="searchbarTags form-control bg-success fw-semibold p-4">
-                    <button type="button" id="dropdownApplianceButton"
-                        class="btn bg-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <span class="visually-hidden">Toggle Dropdown</span>
+                        class="searchbarTags form-control bg-green fw-semibold p-4"
+                        aria-describedby="dropdownApplianceButton">
+                    <button type="button" id="dropdownApplianceButton" class="btn bg-green text-white dropdownTag">
+                        <i class="fa-solid fa-angle-down arrowDown"></i>
+                        <i class="fa-solid fa-angle-up arrowUp"></i>
                     </button>
-                    <ul id="dropdown-appliance" class="dropdown-menu dropdown-menu-end bg-success ">
+                    <ul id="dropdown-appliance" class="dropdown-list bg-green invisible">
                     </ul>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-12 mt-2">
-                <div class="input-group">
+            <div class="col-lg-auto col-12">
+                <div class="input-group mt-2 position-relative">
                     <input type="text" name="ustensilSearchbar" id="ustensilSearchbar" placeholder="Ustensiles"
-                        class="searchbarTags form-control bg-danger fw-semibold p-4">
-                    <button type="button" id="dropdownUstensilButton"
-                        class="btn bg-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <span class="visually-hidden">Toggle Dropdown</span>
+                        class="searchbarTags form-control bg-red fw-semibold p-4"
+                        aria-describedby="dropdownUstensilButton">
+                    <button type="button" id="dropdownUstensilButton" class="btn bg-red text-white dropdownTag">
+                        <i class="fa-solid fa-angle-down arrowDown"></i>
+                        <i class="fa-solid fa-angle-up arrowUp"></i>
                     </button>
-                    <ul id="dropdown-ustensil" class="dropdown-menu dropdown-menu-end bg-danger ">
+                    <ul id="dropdown-ustensil" class="dropdown-list bg-red invisible">
                     </ul>
                 </div>
 

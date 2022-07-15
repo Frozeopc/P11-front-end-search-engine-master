@@ -11,15 +11,15 @@ function createTag(filter) {
     let containerHTML;
     switch (filter.getAttribute('data-type')) {
         case "ingredient":
-            background = 'bg-primary';
+            background = 'bg-blue';
             containerHTML = containerTagIngredient;
             break;
         case "appliance":
-            background = 'bg-success';
+            background = 'bg-green';
             containerHTML = containerTagAppliance;
             break;
         case "ustensil":
-            background = 'bg-danger';
+            background = 'bg-red';
             containerHTML = containerTagUstensil;
             break;
     }
@@ -27,7 +27,7 @@ function createTag(filter) {
 
     let html = `
         <span class="badge ${background} fs-6 fw-semibold tag" data-type="${filter.getAttribute('data-type')}" data-name="${namefilter}">${namefilter}
-            <button type="button" class="btn ptn-primary p-0 text-white close-tag" onclick="closeTag('${namefilter}')"><i
+            <button type="button" class="btn  p-0 text-white close-tag" onclick="closeTag('${namefilter}')"><i
             class="fa-regular fa-circle-xmark"></i></button>
         </span>
     `;

@@ -17,11 +17,11 @@ function recipeFactory(data) {
         const html = `
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="card border-0 my-1">
-                        <div class="card-header bg-secondary" style="min-height:200px">
+                        <div class="card-header bg-grey-dark" style="min-height:200px">
                            
                         </div>
 
-                        <div class="card-body bg-light">
+                        <div class="card-body bg-grey-light">
                             <div class="row mb-3">
                                 <div class="col-8">
                                     <h5 class="card-title text-start">${name}</h5>

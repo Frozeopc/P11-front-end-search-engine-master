@@ -1,3 +1,50 @@
+.bg-blue {
+    background-color: #3282f7;
+}
+
+.bg-blue:hover,
+.bg-blue:focus,
+.bg-blue:active,
+.bg-blue.active {
+    color: #fff;
+    background-color: #3282f7 !important;
+
+}
+
+.bg-red {
+    background-color: #ed6454;
+}
+
+.bg-red:hover,
+.bg-red:focus,
+.bg-red:active,
+.bg-red.active {
+    color: #fff;
+    background-color: #ed6454 !important;
+
+}
+
+.bg-green {
+    background-color: #68d9a4;
+}
+
+.bg-green:hover,
+.bg-green:focus,
+.bg-green:active,
+.bg-green.active {
+    color: #fff;
+    background-color: #68d9a4 !important;
+
+}
+
+.bg-grey-dark {
+    background-color: #c7bebe;
+}
+
+.bg-grey-light {
+    background-color: #e7e7e7;
+}
+
 /* Logo */
 header .logo {
     width: 40%;
@@ -29,15 +76,14 @@ header .logo {
 
 .searchbarTags {
     font-size: 16px;
-    border: none;
-    background-color: transparent;
+    border: 2px;
     color: white;
-    border-color: transparent;
-    width: 60%;
+    box-shadow: 0 0 0 0.25rem transparent !important;
 }
 
 .searchbarTags:focus {
     outline: none;
+    width: 600px;
 }
 
 
@@ -46,13 +92,54 @@ header .logo {
 }
 
 /* filtres */
-.dropdown-menu {
-    max-height: 250px;
-    overflow: auto;
-    min-width: 100%;
+.dropdownTag {
+    border-radius: 0 0.375rem 0.375rem 0 !important;
+    border: 2px;
 }
 
-#dropdown-ingredient .dropdown-item:hover,
+.arrowUp {
+    display: none;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 65px;
+    display: block;
+    width: 100%;
+    left: 1px;
+    z-index: 100;
+    max-height: 250px;
+    overflow-y: overlay;
+    -moz-column-count: 3;
+    -moz-column-fill: auto;
+    -webkit-column-count: 3;
+    -webkit-column-fill: auto;
+    column-count: 3;
+    column-fill: auto;
+    list-style: none;
+    cursor: pointer;
+    column-width: 150px;
+    padding: 10px;
+}
+
+.dropdown-list li a {
+    white-space: pre-line;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* #dropdown-ingredient .dropdown-item:hover,
 #dropdown-ingredient .dropdown-item:focus,
 #dropdown-ingredient .dropdown-item:active {
     background-color: #0e3b7c !important;
@@ -68,7 +155,7 @@ header .logo {
 #dropdown-ustensil .dropdown-item:focus,
 #dropdown-ustensil .dropdown-item:active {
     background-color: #a12632 !important;
-}
+} */
 
 /* card recette */
 .card-text {
@@ -81,4 +168,20 @@ header .logo {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@media (max-width: 767.98px) {
+    .dropdown-list {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .dropdown-list {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
 }
