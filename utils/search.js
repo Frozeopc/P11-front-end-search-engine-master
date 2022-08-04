@@ -40,19 +40,20 @@ function search(valueSearch) {
                     recipe.ingredients.some((ingredient) =>
                         ingredient.ingredient
                             .toLowerCase()
+                            .replace(/['| ]/g, "-")
                             .includes(tag.dataset.name)
                     )
                 );
                 break;
             case 'appliance':
                 arrResults = arrResults.filter((recipe) =>
-                    recipe.appliance.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(tag.dataset.name)
+                    recipe.appliance.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/['| ]/g, "-").includes(tag.dataset.name)
                 );
                 break;
             case 'ustensil':
                 arrResults = arrResults.filter((recipe) =>
                     recipe.ustensils.some((ustensil) =>
-                        ustensil.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(tag.dataset.name))
+                        ustensil.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/['| ]/g, "-").includes(tag.dataset.name))
 
                 );
                 break;
