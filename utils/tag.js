@@ -27,7 +27,7 @@ function createTag(filter) {
 
 
     let html = `
-        <span class="badge ${background} fs-6 fw-semibold tag" data-type="${filter.getAttribute('data-type')}" data-name="${namefilter}">${namefilter}
+        <span class="badge ${background} fs-6 fw-semibold tag" data-type="${filter.getAttribute('data-type')}" data-name="${namefilter}">${filter.textContent}
             <button type="button" class="btn ptn-primary p-0 text-white close-tag" onclick="closeTag('${namefilter}')"><i
             class="fa-regular fa-circle-xmark"></i></button>
         </span>

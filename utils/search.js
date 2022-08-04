@@ -46,6 +46,7 @@ function search(valueSearch) {
                         if (arrResults[i].ingredients[j].ingredient
                             .toLowerCase()
                             .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                            .replace(/['| ]/g, "-")
                             .includes(tag.dataset.name)) {
                             foundArray.push(arrResults[i])
                         }
@@ -54,7 +55,7 @@ function search(valueSearch) {
                 break;
             case 'appliance':
                 for (let i = 0; i < arrResults.length; i++) {
-                    if (arrResults[i].appliance.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(tag.dataset.name)) {
+                    if (arrResults[i].appliance.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/['| ]/g, "-").includes(tag.dataset.name)) {
                         foundArray.push(arrResults[i])
                     }
                 }
@@ -62,7 +63,7 @@ function search(valueSearch) {
                 break;
             case 'ustensil':
                 for (let i = 0; i < arrResults.length; i++) {
-                    if (arrResults[i].ustensils.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(tag.dataset.name)) {
+                    if (arrResults[i].ustensils.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/['| ]/g, "-").includes(tag.dataset.name)) {
                         foundArray.push(arrResults[i])
                     }
                 }
