@@ -109,7 +109,7 @@ header .logo {
     left: 1px;
     z-index: 100;
     max-height: 250px;
-    overflow-y: overlay;
+    overflow-y: hidden;
     -moz-column-count: 3;
     -moz-column-fill: auto;
     -webkit-column-count: 3;

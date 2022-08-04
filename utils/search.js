@@ -51,7 +51,9 @@ function search(valueSearch) {
                 break;
             case 'ustensil':
                 arrResults = arrResults.filter((recipe) =>
-                    recipe.ustensils.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(tag.dataset.name)
+                    recipe.ustensils.some((ustensil) =>
+                        ustensil.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(tag.dataset.name))
+
                 );
                 break;
         }
