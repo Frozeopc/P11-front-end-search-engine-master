@@ -63,9 +63,13 @@ function search(valueSearch) {
                 break;
             case 'ustensil':
                 for (let i = 0; i < arrResults.length; i++) {
-                    if (arrResults[i].ustensils.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/['| ]/g, "-").includes(tag.dataset.name)) {
-                        foundArray.push(arrResults[i])
+                    let arrUstensils = arrResults[i].ustensils;
+                    for (let j = 0; j < arrUstensils.length; j++) {
+                        if (arrUstensils[j].toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/['| ]/g, "-").includes(tag.dataset.name)) {
+                            foundArray.push(arrResults[i])
+                        }
                     }
+
                 }
 
                 break;
